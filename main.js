@@ -208,19 +208,19 @@ function main() {
     toggle.addEventListener("click", function() {
         document.getElementsByTagName("body")[0].classList.toggle("dark-mode");
         if (document.getElementsByTagName("body")[0].classList.contains("dark-mode")) {
-            colorHierarchy.src = "images/selected_and_hierarchy_dark.jpg";
-            toggle.src = "images/light-mode.png"
+            colorHierarchy.src = "./images/selected_and_hierarchy_dark.jpg";
+            toggle.src = "./images/light-mode.png"
         }
         else {
-            colorHierarchy.src = "images/selected_and_hierarchy.jpg";
-            toggle.src = "images/dark-mode.png"
+            colorHierarchy.src = "./images/selected_and_hierarchy.jpg";
+            toggle.src = "./images/dark-mode.png"
         }
     })
     
 
 
     //Read the data and plot the plots
-    d3.csv("datasets/tracks_mid_1k.csv",d3.autoType)
+    d3.csv("./datasets/tracks_mid_1k.csv",d3.autoType)
         .then( function(data){ 
             console.log("data loaded")
             //get max and min for categories of radial plot (to nromalize)
@@ -268,7 +268,7 @@ function main() {
                     description = "<span style=\"font-weight: bold\">Valence</span> is a measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry)."
                 }
                 const filterName = document.createElement("div");
-                filterName.innerHTML = `${capitalize(cat)} <img class="question-mark" src="images/question-mark-on-a-circular-black-background.png" alt="Question Mark Icon">`;
+                filterName.innerHTML = `${capitalize(cat)} <img class="question-mark" src="././images/question-mark-on-a-circular-black-background.png" alt="Question Mark Icon">`;
                 filterName.style.fontWeight = "bold";
                 filterName.classList.add("filter-name");
                 filterName.addEventListener('mouseover', (event) => {
